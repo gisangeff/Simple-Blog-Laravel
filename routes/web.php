@@ -20,5 +20,3 @@ Route::get('/', function () {
 
 Route::get('/articles', 'ArticleController@index');
 Route::get('/articles/{id}', 'ArticleController@show');
-
-
