@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h2 class="section-heading">Edit Article</h2>
-                <form method="POST" action="/articles/{{ $article->id }}">
+                <form method="POST" action="/articles/{{ $article->id }}" novalidate>
                     @csrf
                     @method('PUT')
                     <div class="row control-group">
