@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('homepage', ['articles' => Article::take(3)->get()]);
+    return view('homepage', ['articles' => Article::take(3)->latest()->get()]);
 });
 
 Route::get('/articles', 'ArticleController@index');
