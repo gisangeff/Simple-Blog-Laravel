@@ -34,7 +34,7 @@
                               id="title"
                               value="{{ old('title') }}" required
                               data-validation-required-message="Please enter article title.">
-                              <p class="help-block text-danger"></p>
+                            <p class="help-block text-danger"></p>
                             @error('title')
                               <p class="help-block text-danger">{{ $errors->first('title') }}</p>
                             @enderror
@@ -50,7 +50,7 @@
                               id="subtitle"
                               value="{{ old('subtitle') }}" required
                               data-validation-required-message="Please enter article subtitle.">
-                              <p class="help-block text-danger"></p>
+                            <p class="help-block text-danger"></p>
                             @error('subtitle')
                               <p class="help-block text-danger">{{ $errors->first('subtitle') }}</p>
                             @enderror
@@ -66,7 +66,7 @@
                               id="author"
                               value="{{ old('author') }}" required
                               data-validation-required-message="Please enter author name.">
-                              <p class="help-block text-danger"></p>
+                            <p class="help-block text-danger"></p>
                             @error('author')
                               <p class="help-block text-danger">{{ $errors->first('author') }}</p>
                             @enderror
@@ -79,8 +79,7 @@
                               class="form-control" 
                               name="body" 
                               placeholder="Content" 
-                              id="body" 
-                              required
+                              id="body" required
                               data-validation-required-message="Please enter content.">{{ old('body') }}</textarea>
                             <p class="help-block text-danger"></p>
                             @error('body')

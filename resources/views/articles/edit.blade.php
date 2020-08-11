@@ -21,44 +21,61 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                @if ($errors->any())
+                    <p class="alert alert-info">No changes have been made.</p>
+                @endif
                 <h2 class="section-heading">Edit Article</h2>
-                <form method="POST" action="/articles/{{ $article->id }}" novalidate>
+                <form method="POST" action="/articles/{{ $article->id }}" id="contactForm" novalidate>
                     @csrf
                     @method('PUT')
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Title</label>
-                            <input type="text" class="form-control" name="title" value="{{ $article->title }}"
-                                placeholder="Title" id="title" required
-                                data-validation-required-message="Please enter article title.">
+                            <input type="text" 
+                              class="form-control" 
+                              name="title" 
+                              placeholder="Title" 
+                              id="title"
+                              value="{{ $article->title }}" required
+                              data-validation-required-message="Please enter article title.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Subtitle</label>
-                            <input type="text" class="form-control" name="subtitle" value="{{ $article->subtitle }}"
-                                placeholder="Subtitle" id="subtitle" required
-                                data-validation-required-message="Please enter article subtitle.">
+                            <input type="text" 
+                              class="form-control" 
+                              name="subtitle" 
+                              placeholder="Subtitle" 
+                              id="subtitle"
+                              value="{{ $article->subtitle }}" required
+                              data-validation-required-message="Please enter article subtitle.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Author</label>
-                            <input type="text" class="form-control" name="author" value="{{ $article->author }}"
-                                placeholder="Author" id="author" required
-                                data-validation-required-message="Please enter author name.">
+                            <input type="text" 
+                              class="form-control" 
+                              name="author" 
+                              placeholder="Author" 
+                              id="author"
+                              value="{{ $article->author }}" required
+                              data-validation-required-message="Please enter author name.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Content</label>
-                            <textarea rows="5" class="form-control" name="body" placeholder="Content" id="body" required
-                                data-validation-required-message="Please enter content.">
-                            {{ $article->body }}
-                            </textarea>
+                            <textarea rows="5" 
+                              class="form-control" 
+                              name="body" 
+                              placeholder="Content" 
+                              id="body" required
+                              data-validation-required-message="Please enter content.">{{ $article->body }}</textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
