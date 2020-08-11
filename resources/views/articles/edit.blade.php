@@ -25,7 +25,7 @@
                     <p class="alert alert-info">No changes have been made.</p>
                 @endif
                 <h2 class="section-heading">Edit Article</h2>
-                <form method="POST" action="/articles/{{ $article->id }}" id="contactForm" novalidate>
+                <form method="POST" action="{{ route('articles.show', $article) }}" id="contactForm" novalidate>
                     @csrf
                     @method('PUT')
                     <div class="row control-group">

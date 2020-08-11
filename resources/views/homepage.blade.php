@@ -25,7 +25,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 @foreach ($articles as $article)
                     <div class="post-preview">
-                        <a href="/articles/{{ $article->id }}">
+                        <a href="{{ route('articles.show', $article) }}">
                             <h2 class="section-heading">
                                 {{ $article->title }}
                             </h2>
@@ -43,7 +43,7 @@
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
-                        <a href="/articles">View All Articles</a>
+                        <a href="{{ route('articles.index') }}">View All Articles</a>
                     </li>
                 </ul>
             </div>

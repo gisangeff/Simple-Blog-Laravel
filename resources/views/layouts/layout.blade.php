@@ -48,7 +48,7 @@
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/articles">Articles</a>
+                        <a href="{{ route('articles.index') }}">Articles</a>
                     </li>
                     <li>
                         <a href="about.html">About</a>

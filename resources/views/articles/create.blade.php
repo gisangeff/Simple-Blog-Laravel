@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h2 class="section-heading">New Article</h2>
-                <form method="POST" action="/articles" id="contactForm" novalidate>
+                <form method="POST" action="{{ route('articles.index') }}" id="contactForm" novalidate>
                     @csrf
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
