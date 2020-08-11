@@ -11,69 +11,43 @@ class ArticleController extends Controller
     public function index() {
 
         $articles = Article::latest()->get();
+        return view('articles.index', compact('articles'));
 
-        return view('articles.index', ['articles' => $articles]);
     }
 
-    public function show($id) {
-
-        $article = Article::find($id);
-
-        return view('articles.show', ['article' => $article]);
+    public function show(Article $article) {
+        return view('articles.show', compact('article'));
     }
 
     public function create() {
-
         return view('articles.create');
     }
 
     public function store() {
 
-        request()->validate([
-            'title' => 'required',
-            'subtitle' => 'required',
-            'author' => 'required',
-            'body' => 'required'
-        ]);
-
-        $article = new Article();
-
-        $article->title = request('title');
-        $article->subtitle = request('subtitle');
-        $article->author = request('author');
-        $article->body = request('body');
-
-        $article->save();
-
+        Article::create($this->validateArticle());
         return redirect('/articles');
+
     }
 
-    public function edit($id) {
-
-        $article = Article::find($id);
-
+    public function edit(Article $article) {
         return view('articles.edit', compact('article'));
     }
+    public function update(Article $article) {
 
-    public function update($id) {
+        $article->update($this->validateArticle());
+        return redirect('/articles/' . $article->id);
 
-        request()->validate([
+    }
+    
+    public function validateArticle() {
+
+        return request()->validate([
             'title' => 'required',
-            'subtitle' => 'required',
+            'subtitle' => 'nullable',
             'author' => 'required',
             'body' => 'required'
         ]);
-
-        $article = Article::find($id);
-
-        $article->title = request('title');
-        $article->subtitle = request('subtitle');
-        $article->author = request('author');
-        $article->body = request('body');
-
-        $article->save();
-
-        return redirect('/articles/' . $article->id);
-
+        
     }
 }

@@ -48,9 +48,7 @@
                               name="subtitle" 
                               placeholder="Subtitle" 
                               id="subtitle"
-                              value="{{ old('subtitle') }}" required
-                              data-validation-required-message="Please enter article subtitle.">
-                            <p class="help-block text-danger"></p>
+                              value="{{ old('subtitle') }}">
                             @error('subtitle')
                               <p class="help-block text-danger">{{ $errors->first('subtitle') }}</p>
                             @enderror

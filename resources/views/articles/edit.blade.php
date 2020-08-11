@@ -49,9 +49,7 @@
                               name="subtitle" 
                               placeholder="Subtitle" 
                               id="subtitle"
-                              value="{{ $article->subtitle }}" required
-                              data-validation-required-message="Please enter article subtitle.">
-                            <p class="help-block text-danger"></p>
+                              value="{{ $article->subtitle }}">
                         </div>
                     </div>
                     <div class="row control-group">
