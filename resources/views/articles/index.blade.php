@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('title')
+    Articles
+@endsection
+
 @section('header')
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
