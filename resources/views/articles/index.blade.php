@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                @foreach ($articles as $article)
+                @forelse ($articles as $article)
                     <div class="post-preview">
                         <a href="{{ route('articles.show', $article) }}">
                             <h2 class="section-heading">
@@ -41,11 +41,14 @@
                             {{ $article->created_at }}</p>
                     </div>
                     <hr>
-                @endforeach
+                @empty
+                    <p>No relevant articles yet.</p>
+
+                @endforelse
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
-                    {{ $articles->links() }}
+                        {{ $articles->links() }}
                     </li>
                 </ul>
             </div>
