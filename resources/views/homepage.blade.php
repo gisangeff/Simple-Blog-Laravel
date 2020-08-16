@@ -35,7 +35,7 @@
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#">{{ $article->author }}</a> on
+                            <a href="#">{{ $article->user->name }}</a> on
                             {{ $article->created_at }}</p>
                     </div>
                     <hr>

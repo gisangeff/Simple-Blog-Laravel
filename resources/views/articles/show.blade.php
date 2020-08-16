@@ -15,7 +15,7 @@
                         <h1 class="post-title">{{ $article->title }}</h1>
                         <h3 class="post-subtitle">{{ $article->subtitle }}</h2>
                             <span class="meta">Posted by
-                                <a href="#">{{ $article->author }}</a> on
+                                <a href="#">{{ $article->user->name }}</a> on
                                 {{ $article->created_at }}</span>
                     </div>
                 </div>
