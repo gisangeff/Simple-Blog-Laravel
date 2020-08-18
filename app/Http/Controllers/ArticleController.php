@@ -61,7 +61,7 @@ class ArticleController extends Controller
             'title' => 'required',
             'subtitle' => 'nullable',
             'body' => 'required',
-            'tags' => 'exists:tags,id'
+            'tags' => 'required|exists:tags,id'
         ]);
         
     }

@@ -40,7 +40,7 @@
                               data-validation-required-message="Please enter article title.">
                             <p class="help-block text-danger"></p>
                             @error('title')
-                              <p class="help-block text-danger">{{ $errors->first('title') }}</p>
+                              <p class="help-block text-danger">{{ $message }}</p>
                             @enderror
                         </div>
                     </div>
@@ -54,23 +54,7 @@
                               id="subtitle"
                               value="{{ old('subtitle') }}">
                             @error('subtitle')
-                              <p class="help-block text-danger">{{ $errors->first('subtitle') }}</p>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Author</label>
-                            <input type="text" 
-                              class="form-control" 
-                              name="author" 
-                              placeholder="Author" 
-                              id="author"
-                              value="{{ old('author') }}" required
-                              data-validation-required-message="Please enter author name.">
-                            <p class="help-block text-danger"></p>
-                            @error('author')
-                              <p class="help-block text-danger">{{ $errors->first('author') }}</p>
+                              <p class="help-block text-danger">{{ $message }}</p>
                             @enderror
                         </div>
                     </div>
@@ -85,7 +69,7 @@
                               data-validation-required-message="Please enter content.">{{ old('body') }}</textarea>
                             <p class="help-block text-danger"></p>
                             @error('body')
-                              <p class="help-block text-danger">{{ $errors->first('body') }}</p>
+                              <p class="help-block text-danger">{{ $message }}</p>
                             @enderror
                         </div>
                     </div>
@@ -94,10 +78,11 @@
                             <p style="font-size: 1.5em; color: #858585">Select tags here:</p>
                             <label>Tags</label>
                             <select name="tags[]"
-                                multiple class="form-control">
-                                @foreach ($tags as $tag)
-                                    <option value="{{ $tag->id }}" style="font-size: 1.5em;">{{ $tag->name}}</option>
-                                @endforeach
+                                multiple 
+                                class="form-control">
+                            @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}" style="font-size: 1.5em;">{{ $tag->name}}</option>
+                            @endforeach
                             </select>
                             <p class="help-block text-danger"></p>
                             @error('tags')
