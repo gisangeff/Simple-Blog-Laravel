@@ -58,19 +58,6 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Author</label>
-                            <input type="text" 
-                              class="form-control" 
-                              name="author" 
-                              placeholder="Author" 
-                              id="author"
-                              value="{{ $article->author }}" required
-                              data-validation-required-message="Please enter author name.">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Content</label>
                             <textarea rows="5" 
                               class="form-control" 
