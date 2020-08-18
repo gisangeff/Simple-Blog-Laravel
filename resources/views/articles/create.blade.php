@@ -81,7 +81,7 @@
                                 multiple 
                                 class="form-control">
                             @foreach ($tags as $tag)
-                                <option value="{{ $tag->id }}" style="font-size: 1.5em;">{{ $tag->name}}</option>
+                                <option value="{{ $tag->id }}" style="font-size: 1.5em;">{{ $tag->name }}</option>
                             @endforeach
                             </select>
                             <p class="help-block text-danger"></p>

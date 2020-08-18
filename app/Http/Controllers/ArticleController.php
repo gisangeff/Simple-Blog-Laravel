@@ -46,7 +46,7 @@ class ArticleController extends Controller
     }
 
     public function edit(Article $article) {
-        return view('articles.edit', compact('article'));
+        return view('articles.edit', ['article' => $article, 'tags' => Tag::all()]);
     }
     public function update(Article $article) {
 

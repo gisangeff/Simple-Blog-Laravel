@@ -68,6 +68,29 @@
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <p style="font-size: 1.5em; color: #858585">Select tags here:</p>
+                            <label>Tags</label>
+                            <select name="tags[]"
+                              multiple 
+                              class="form-control">
+                            @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}"
+                                    if (in_array())
+                                    style="font-size: 1.5em;">{{ $tag->name }}</option>
+                            @endforeach
+                            {{-- @foreach ($article->tags as $tag)
+                                <a href="{{ route('articles.index', ['tag' => $tag->name]) }}">{{ $tag->name }}</a>
+                                <option value="{{ $tag->id }}" style="font-size: 1.5em;">{{ $tag->name }}</option>
+                             @endforeach --}}
+                            </select>
+                            <p class="help-block text-danger"></p>
+                            @error('tags')
+                              <p class="help-block text-danger" style="color: red;">{{ $message }}</p>
+                            @enderror
+                        </div>
+                    </div>
                     <br>
                     <div id="success"></div>
                     <div class="row">
