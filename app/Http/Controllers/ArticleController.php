@@ -13,10 +13,10 @@ class ArticleController extends Controller
     public function index() {
 
         if (request('tag')) {
-            $articles = Tag::where('name', request('tag'))->firstOrFail()->articles()->simplePaginate(3);
+            $articles = Tag::where('name', request('tag'))->firstOrFail()->articles()->simplePaginate(5);
 
         } else {
-            $articles = Article::latest()->simplePaginate(3);
+            $articles = Article::latest()->simplePaginate(5);
         }
 
         return view('articles.index', compact('articles'));
