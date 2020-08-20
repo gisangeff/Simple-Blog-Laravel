@@ -77,13 +77,11 @@
                               class="form-control">
                             @foreach ($tags as $tag)
                                 <option value="{{ $tag->id }}"
-                                    if (in_array())
-                                    style="font-size: 1.5em;">{{ $tag->name }}</option>
+                                    {{ $article->tags->contains('id', $tag->id) ? 'selected' : '' }}
+                                    style="font-size: 1.5em;">
+                                    {{ $tag->name }}
+                                </option>
                             @endforeach
-                            {{-- @foreach ($article->tags as $tag)
-                                <a href="{{ route('articles.index', ['tag' => $tag->name]) }}">{{ $tag->name }}</a>
-                                <option value="{{ $tag->id }}" style="font-size: 1.5em;">{{ $tag->name }}</option>
-                             @endforeach --}}
                             </select>
                             <p class="help-block text-danger"></p>
                             @error('tags')
