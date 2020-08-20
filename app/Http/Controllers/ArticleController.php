@@ -51,6 +51,10 @@ class ArticleController extends Controller
     public function update(Article $article) {
 
         $article->update($this->validateArticle());
+
+        $article->tags()->detach($article->tags);
+        $article->tags()->attach(request('tags'));
+
         return redirect(route('articles.show', $article));
 
     }
