@@ -20,7 +20,7 @@
                     <a href="{{ route('articles.index') }}">Articles</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="/about">About</a>
                 </li>
                 <li>
                     <a href="/contact">Contact</a>

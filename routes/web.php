@@ -21,6 +21,10 @@ Route::get('/contact', function (){
     return view('contact');
 });
 
+Route::get('/about', function() {
+    return view('about');
+});
+
 Route::get('/articles', 'ArticleController@index')->name('articles.index');
 Route::post('/articles', 'ArticleController@store');
 Route::get('/articles/create', 'ArticleController@create');
